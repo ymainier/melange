@@ -4,29 +4,42 @@ import PropTypes from "prop-types";
 import ColorPickerItem from "./ColorPickerItem";
 
 export const COLORS = [
-  "#FFFFFF",
-  "#C0C0C0",
-  "#808080",
+  "#F44336",
+  "#F06292",
+  "#9C27B0",
+  "#673AB7",
+  "#3F51B5",
+  "#2196F3",
+  "#03A9F4",
+  "#00BCD4",
+  "#009688",
+  "#4CAF50",
+  "#8BC34A",
+  "#CDDC39",
+  "#FFEB3B",
+  "#FFC107",
+  "#FF9800",
+  "#FF9800",
+  "#795548",
+  "#607D8B",
+  "#9E9E9E",
+  "#E0E0E0",
   "#000000",
-  "#FF00FF",
-  "#800080",
-  "#FF0000",
-  "#800000",
-  "#FFFF00",
-  "#808000",
-  "#00FF00",
-  "#008000",
-  "#00FFFF",
-  "#008080",
-  "#0000FF",
-  "#000080"
+  "#424242",
+  "#F5F5F5",
+  "#FFFFFF"
 ];
 
 export default function ColorPickerView(props) {
   return (
     <div className="ColorPickerView">
       {COLORS.map((color, index) => (
-        <ColorPickerItem key={index} index={index} color={color} onSelect={props.onMixColor} />
+        <ColorPickerItem
+          key={index}
+          index={index}
+          color={color}
+          onSelect={props.onMixColor}
+        />
       ))}
     </div>
   );

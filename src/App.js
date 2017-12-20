@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
 import ColorMixView from "./ColorMixView";
-import ColorPickerView from "./ColorPickerView";
+import ColorPickerView, { COLORS } from "./ColorPickerView";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      left: "#ffffff",
-      right: "#ff0000",
+      left: COLORS[0],
+      right: COLORS[4],
       side: "left",
       mix: true
     };

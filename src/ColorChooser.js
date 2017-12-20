@@ -5,8 +5,9 @@ export default function ColorChooser(props) {
   return (
     <div
       className={`ColorChooser ${props.side}`}
-      style={({backgroundColor: props.color})}
+      style={{ backgroundColor: props.color }}
       onClick={() => props.onChange(props.side)}
+      onTouchEnd={event => event.stopPropagation() && props.onChange(props.side)}
     />
   );
 }

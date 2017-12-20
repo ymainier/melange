@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export function top (index) {
-  return `${5 + Math.floor(index / 4) * 23.75}%`
+export function top(index) {
+  return `${5 + Math.floor(index / 4) * 23.75}%`;
 }
 
-export function left (index) {
-  return `${5 + (index % 4) * 23.75}%`
+export function left(index) {
+  return `${5 + (index % 4) * 23.75}%`;
 }
 
 export default function ColorPickerItem(props) {
@@ -16,9 +16,13 @@ export default function ColorPickerItem(props) {
       style={{
         backgroundColor: props.color,
         top: top(props.index),
-        left: left(props.index)
+        left: left(props.index),
+        marginBottom: "5%"
       }}
       onClick={() => props.onSelect(props.color)}
+      onTouchStart={event =>
+        event.stopPropagation() && props.onSelect(props.color)
+      }
     />
   );
 }
